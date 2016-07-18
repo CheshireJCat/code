@@ -1,0 +1,166 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 微软雅黑;
+}
+.logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+main {
+  height: 100%;
+}
+aside {
+  width: 240px;
+  position: fixed;
+  box-shadow: 2px 2px 2px #ddd;
+  height: 100%;
+  background-color: #fff;
+  z-index: 998;
+  font-size: 15px;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+aside dt,
+aside a {
+  display: block;
+  color: #444;
+  padding: 0 25px;
+  cursor: pointer;
+}
+aside dt {
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 40px;
+  height: 40px;
+}
+aside dt.active + dd a {
+  height: 30px;
+  opacity: 1;
+}
+aside dd a {
+  padding-left: 40px;
+  height: 0;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  line-height: 30px;
+  opacity: 0.5;
+  overflow: hidden;
+}
+aside dd a.active {
+  background-color: #ee6e73;
+  color: #fff;
+}
+aside:hover {
+  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+aside dt:hover,
+aside li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.main {
+  background-color: #000;
+  padding-left: 240px;
+  background-color: #FCFCFC;
+}
+.main article .codes {
+  width: 90%;
+  margin: 1rem auto;
+}
+.main article h2 {
+  font-size: 4.2rem;
+  line-height: 4.62rem;
+  padding: 2.1rem 2rem 1.68rem 2rem;
+  background-color: #ee6e73;
+  color: #fff;
+}
+.main article h3 {
+  font-size: 3.5rem;
+  line-height: 3rem;
+  padding: 1rem 0;
+  color: #444;
+  border-bottom: 1px solid #eee;
+}
+.main article section {
+  width: 90%;
+  margin: 2rem auto;
+}
+.main article p {
+  line-height: 2rem;
+}
+.main article h4 {
+  font-size: 3.3rem;
+}
+.main article h5 {
+  font-size: 3rem;
+  line-height: 3.916rem;
+  margin: 1.78rem 0 1.424rem 0;
+  color: #ee6e73;
+  zoom: 1;
+  clear: both;
+}
+.main article h6 {
+  font-size: 2.55rem;
+}
+.main article h5:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.main article xmp,
+.main article code {
+  position: relative;
+  font-size: 1.1rem;
+  background: #f5f2f0;
+  margin: .5em 0;
+  overflow: auto;
+  color: black;
+  font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.4;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+}
+.main .md > h3,
+.main .md > h4,
+.main .md > h5,
+.main .md > h6,
+.main .md > ul,
+.main .md > p,
+.main .md > blockquote {
+  width: 90%;
+  margin: 1rem auto;
+}
+.main .md > blockquote {
+  color: #f57f17;
+}
+.main .md > pre {
+  width: 90%;
+  margin: 0.5rem auto;
+  background: #f5f2f0;
+  line-height: 1.4;
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
+  padding: 16px;
+  overflow: auto;
+}
+.main .md > ul li {
+  margin: 0.5rem auto;
+  list-style: disc inside;
+}
+.no {
+  color: red;
+}
