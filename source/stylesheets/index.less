@@ -1,0 +1,57 @@
+@mainColor:#ee6e73;
+
+html,body{height:100%;}
+body{font-family:微软雅黑;}
+.logo{position:absolute;left:0;top: 0;}
+main{height:100%;}
+aside{
+	width:240px;position:fixed;box-shadow:2px 2px 2px #ddd;height:100%;background-color:#fff;z-index:998;font-size:15px;padding-top: 80px;box-sizing: border-box;
+	dt,a{display:block;color:#444;padding:0 25px;cursor: pointer;}
+	dt{font-weight:bolder;font-size: 18px;line-height: 40px;height: 40px;}
+	dt.active+dd a{
+		height: 30px;opacity: 1;
+	}
+	dd{
+		a{
+			padding-left: 40px;height:0;transition:0.6s;line-height:30px;opacity: 0.5;overflow:hidden;
+			&.active{background-color: @mainColor;color:#fff;}
+		}
+	}
+	&:hover {
+	  overflow:auto;overflow-y: auto;overflow-x:hidden;
+	}
+	dt,li{
+	  &:hover{background-color: rgba(0,0,0,0.05);}
+	}
+}
+.main{
+	background-color: #000;padding-left: 240px;background-color: #FCFCFC;
+	article{
+		.codes{width: 90%;margin:1rem auto;}
+		h2{font-size: 4.2rem;line-height: 4.62rem;padding: 2.1rem 2rem 1.68rem 2rem;background-color: @mainColor;color:#fff}
+		h3{font-size: 3.5rem;line-height: 3rem;padding: 1rem 0;color:#444;border-bottom: 1px solid #eee;}
+		section{width: 90%;margin:2rem auto;}
+		p{line-height: 2rem;}
+		h4{font-size: 3.3rem;}
+		h5{
+			font-size: 3rem;line-height: 3.916rem;margin: 1.78rem 0 1.424rem 0;color: @mainColor;zoom:1;clear:both;
+		}
+		h6{font-size: 2.55rem;}
+		h5:after{content: '.';display: block;height: 0;clear: both;visibility: hidden;}
+		xmp,code{
+			position: relative;font-size: 1.1rem;background: #f5f2f0;margin: .5em 0;overflow: auto;color: black;font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;direction: ltr;text-align: left;white-space: pre;word-spacing: normal;word-break: normal;line-height: 1.4;tab-size: 4;
+		}
+	}
+	.md{
+		&>h3,&>h4,&>h5,&>h6,&>ul,&>p,&>blockquote{width: 90%;margin:1rem auto;}
+		&>blockquote{color:#f57f17;}
+		&>pre{width: 90%;margin:0.5rem auto;background: #f5f2f0;line-height: 1.4;tab-size: 4;padding: 16px;overflow: auto;}
+		&>ul li{margin:0.5rem auto;list-style: disc inside;}
+	}
+}
+
+.no{color:red;}
+
+
+
+

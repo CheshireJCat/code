@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>codes</title>
+	<link rel="stylesheet" type="text/css" href="lib/reset.css">
+	<link rel="stylesheet" type="text/css" href="source/stylesheets/index.css">
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<aside>
+			<div class="logo"><img src="http://dummyimage.com/240x80/4d494d/686a82.gif&text=Codes" alt="Codes"></a></div>
+			<dt>html</dt>
+			<dd>
+				<ul>
+					<li><a href="html/html5shiv.md">html5shiv</a></li>
+					<li><a href="html/navigation.md">顶部导航</a></li>
+					<li><a href="html/dropdown.md">下拉菜单</a></li>
+					<li><a href="html/search.md">搜索框</a></li>
+					<li><a href="html/btns.md">按钮</a></li>
+					<li><a href="html/card.md">卡片</a></li>
+					<li><a href="html/collection.md">集合</a></li>
+					<li><a href="html/pagination.md">分页</a></li>
+					<li><a href="html/form.md">表单</a></li>
+					<li><a href="html/form-radio.md">单选按钮</a></li>
+					<li><a href="html/form-checkbox.md">多选按钮</a></li>
+					<li><a href="html/badge.md">消息提醒（徽章）</a></li>
+					<li><a href="html/tab-box.md">tab-box</a></li>
+					<li><a href="html/openApp.md">移动端底部下载App按钮</a></li>
+					<li><a href="html/100forie78.md">100%兼容ie78</a></li>
+					<li><a href="html/html5video&audio.md">Html5音频和视频播放示例</a></li>
+				</ul>
+			</dd>
+			<dt>css</dt>
+			<dd class="active">
+				<ul>
+					<li><a href="css/text-overflow.md">文字截断显示省略号</a></li>
+					<li><a href="css/border-radius.md">圆角 border-radius</a></li>
+					<li><a href="css/Gradient-Patterns.md">纹理-Gradient Patterns</a></li>
+					<li><a href="css/box-shadow.md">阴影 box-shadow</a></li>
+					<li><a href="css/colors.html">调色板</a></li>
+					<li><a href="css/delta.md">三角形</a></li>
+					<li><a href="css/mediaQuery.md">常见Media Query</a></li>
+				</ul>
+			</dd>
+			<dt class="active">javascript</dt>
+			<dd>
+				<ul>
+					<li><a href="js/RegExp.md">正则</a></li>
+					<li><a href="js/isMobile.md">JS判断移动设备</a></li>
+					<li><a href="js/trim.md">去空格 trim</a></li>
+					<li><a href="html/html5shiv.md">html5shiv</a></li>
+					<li><a href="js/iframe.md">iframe获取元素</a></li>
+					<li><a href="js/getElementsByClassName.md">JS获取自身所在文件路径</a></li>
+					<li><a href="js/console.md">console的用法</a></li>
+					<li><a href="js/es5-for-ie6-8hack.md">es5对于IE6-8的hack</a></li>
+					<li><a href="js/getElementsByClassName.md">getElementsByClassName</a></li>
+					<li><a href="js/TailRecursiveOptimization.md">尾递归优化</a></li>
+					<li><a href="js/imgPreLoad.md">图片预加载</a></li>
+					<li><a href="js/NativeAjax.md">原生ajax</a></li>
+					<li><a href="js/othersHide.md">单击选择器以外的元素隐藏</a></li>
+					<li><a href="js/dragforUpload.md">JavaScript异步拖拽上传</a></li>
+					<li><a href="js/localPreviewImg.md">图片上传之前先预览</a></li>
+					<li><a href="js/addToCollection.md">加入收藏夹</a></li>
+					<li><a href="js/setHome.md">设为首页</a></li>
+					<li><a href="js/loadStyle.md">加载样式文件</a></li>
+					<li><a href="js/eventsNormal.md">绑定事件、on、trigger</a></li>
+					<li><a href="js/format&compressCss.md">格式化，压缩css</a></li>
+					<li><a href="js/decode.md">解码&解码</a></li>
+				</ul>
+			</dd>
+		</aside>
+	<main class="main"><article id="content"></article></main>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/showdown.js"></script>
+	<script type="text/javascript">
+		var converter = new showdown.Converter();
+		jQuery(document).ready(function($) {
+			function importHtml(url){
+				if($("#content").attr('data-html')!==url){
+					$.ajax({
+						url: url
+					})
+					.done(function(html) {
+						var md = /(\.[md|markdown])/gi.test(url);
+						$("#content").html(md?converter.makeHtml(html):html).attr('data-html',url);
+						md?$("#content").addClass('md'):$("#content").removeClass('md');
+					})
+					.fail(function(error) {
+						$("#content").html('获取失败');
+					});
+				}
+			}
+
+			$("aside").on('click', 'a', function(event) {
+				event.preventDefault();
+				$("aside a.active").removeClass('active');
+				$(this).addClass('active');
+				importHtml($(this)[0].href);
+			});
+			$("aside").on('click','dt',function(event) {
+				event.preventDefault();
+				$(this).toggleClass('active');
+					
+			});
+		});
+	</script>
+</body>
+</html>
