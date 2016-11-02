@@ -41,6 +41,9 @@ aside dt.active + dd a {
   height: 30px;
   opacity: 1;
 }
+aside dd:last-child{
+  margin-bottom: 50px;
+}
 aside dd a {
   padding-left: 40px;
   height: 0;
